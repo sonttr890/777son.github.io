@@ -9,27 +9,29 @@ body {
     overflow-x: hidden;
 }
 
-/* Custom Cursor */
-.cursor, .cursor-follower {
-    position: fixed;
-    border-radius: 50%;
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    z-index: 1000;
-}
+/* Custom Cursor (Hanya untuk PC) */
+@media (hover: hover) {
+    .cursor, .cursor-follower {
+        position: fixed;
+        border-radius: 50%;
+        pointer-events: none;
+        transform: translate(-50%, -50%);
+        z-index: 1000;
+    }
 
-.cursor {
-    width: 10px;
-    height: 10px;
-    background: #6a11cb;
-    transition: width 0.2s, height 0.2s;
-}
+    .cursor {
+        width: 10px;
+        height: 10px;
+        background: #6a11cb;
+        transition: width 0.2s, height 0.2s;
+    }
 
-.cursor-follower {
-    width: 30px;
-    height: 30px;
-    border: 2px solid #6a11cb;
-    transition: all 0.1s ease-out;
+    .cursor-follower {
+        width: 30px;
+        height: 30px;
+        border: 2px solid #6a11cb;
+        transition: all 0.1s ease-out;
+    }
 }
 
 /* Header */
@@ -260,7 +262,7 @@ footer {
     }
 }
 
-/* Responsive Design */
+/* Responsive Design untuk Mobile */
 @media (max-width: 768px) {
     header h1 {
         font-size: 2rem;
@@ -278,8 +280,48 @@ footer {
         grid-template-columns: 1fr;
     }
 
+    .skill-card, .bug-bounty-card {
+        padding: 15px;
+    }
+
+    .skill-card i, .bug-bounty-card img {
+        font-size: 1.5rem;
+    }
+
+    .skill-card h3, .bug-bounty-content h3 {
+        font-size: 1.2rem;
+    }
+
+    .skill-card p, .bug-bounty-content p {
+        font-size: 0.9rem;
+    }
+
     .contact-links {
         flex-direction: column;
         align-items: center;
+    }
+
+    .contact-link {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Responsive Design untuk Tablet */
+@media (min-width: 769px) and (max-width: 1024px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    header p {
+        font-size: 1.3rem;
+    }
+
+    h2 {
+        font-size: 2.2rem;
+    }
+
+    .skill-grid, .bug-bounty-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
